@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Publicaciones\IPOR\ApiRest</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/IKVM.AWT.WinForms.dll">
+      <publishTime>06/12/2012 09:53:16</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Beans.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Charsets.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Corba.dll">
+      <publishTime>06/12/2012 09:52:26</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Core.dll">
+      <publishTime>06/12/2012 09:52:26</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Management.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Media.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Misc.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Naming.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Remoting.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Security.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.SwingAWT.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Text.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.Util.dll">
+      <publishTime>06/12/2012 09:52:28</publishTime>
+    </File>
+    <File Include="bin/IKVM.OpenJDK.XML.API.dll">
+      <publishTime>06/12/2012 09:52:26</publishTime>
+    </File>
+    <File Include="bin/IKVM.Runtime.dll">
+      <publishTime>06/12/2012 09:53:02</publishTime>
+    </File>
+    <File Include="bin/IKVM.Runtime.JNI.dll">
+      <publishTime>06/12/2012 09:53:00</publishTime>
+    </File>
+    <File Include="bin/jr-acreditacion-susalud.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/LibEncrypt.dll">
+      <publishTime>08/10/2021 22:51:49</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.Bson.dll">
+      <publishTime>05/21/2025 19:58:44</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>05/21/2025 19:58:44</publishTime>
+    </File>
+    <File Include="bin/RoyalSISWS.dll">
+      <publishTime>05/21/2025 19:59:32</publishTime>
+    </File>
+    <File Include="bin/RoyalSystems.Core.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/RoyalSystems.Data.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/System.Buffers.dll">
+      <publishTime>05/21/2025 19:58:44</publishTime>
+    </File>
+    <File Include="bin/System.Memory.dll">
+      <publishTime>05/21/2025 19:58:44</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/21/2025 19:58:45</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>05/21/2025 19:58:44</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Tasks.Extensions.dll">
+      <publishTime>05/21/2025 19:58:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/21/2025 19:58:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/21/2025 19:58:45</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/09/2024 21:22:38</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Models/BD.edmx.diagram">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Models/BD_COMERCIAL/BD_COMERCIAL_.edmx.diagram">
+      <publishTime>02/11/2019 11:11:32</publishTime>
+    </File>
+    <File Include="Models/BD_RESULTADOS_PFD/BD_RESULTADOS_PDF.edmx.diagram">
+      <publishTime>01/11/2019 15:54:22</publishTime>
+    </File>
+    <File Include="Models/BD_VIEJA/BD.edmx.diagram">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Models/DataTablesSample/DataSample.edmx.diagram">
+      <publishTime>06/11/2019 21:46:24</publishTime>
+    </File>
+    <File Include="Models/Golf/ModelGolf.edmx.diagram">
+      <publishTime>04/07/2020 21:31:28</publishTime>
+    </File>
+    <File Include="Models/SpringSalud_produccion/SpringSalud.edmx.diagram">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Models/WEB_ERPSALUD/BDWEB_ERPSALUD.edmx.diagram">
+      <publishTime>11/19/2024 14:58:16</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/21/2025 19:58:52</publishTime>
+    </File>
+    <File Include="Service.asmx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="SoaService.asmx">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="SoaServices.asmx">
+      <publishTime>01/11/2019 15:18:36</publishTime>
+    </File>
+    <File Include="SpringWeb.config">
+      <publishTime>04/17/2025 10:35:09</publishTime>
+    </File>
+    <File Include="Views/Consulta/Index.cshtml">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/21/2025 19:59:32</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
