@@ -295,6 +295,17 @@ namespace RoyalSISWS.Models
             return lst;
         }
 
+        public List<SS_GE_PacienteOncologicoHC> listarHistoriaOncologica(CW_DisponibilidadMedica Disponibilidad)
+        {
+            List<SS_GE_PacienteOncologicoHC> lstLinea = new List<SS_GE_PacienteOncologicoHC>();
+            using (var ctx = new SpringSalud_produccionEntities())
+            {
+                lstLinea = ctx.Database.SqlQuery<SS_GE_PacienteOncologicoHC>(
+                  "SELECT * FROM SS_GE_PacienteOncologicoHC WHERE IdPaciente = " + Disponibilidad.IdCita
+                 ).ToList();
+            }
+            return lstLinea;
+        }
 
         #endregion
 

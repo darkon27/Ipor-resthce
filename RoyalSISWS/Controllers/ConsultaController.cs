@@ -149,38 +149,62 @@ namespace RoyalSISWS.Controllers
 
         #region CitaHistoria
 
-        public ActionResult ListarVisorHistoria(Nullable<int> Accion, string tipoDocumento, string Documento, string cod_sucursal)
+        public ActionResult ListarVisorHistoria(int? accion, string tipoDocumento, string documento, string cod_sucursal)
         {
             try
             {
-                if (Accion == 1)
+                if (accion != 1)
                 {
-                    CW_DisponibilidadMedica VisorHistoria = new CW_DisponibilidadMedica
-                    {
-                        UnidadReplicacion = tipoDocumento,
-                        CMP = Documento,
-                        IdHorario = 1,
-                        IdEspecialidad_Nombre = cod_sucursal
-                    };
+                    return Json(new { error = "Error: Valores de Parámetro no válidos" }, JsonRequestBehavior.AllowGet);
+                }
 
-                    List<VW_SS_HCE_VisorHistoria> lst = m.HCE_VisorHistoria(VisorHistoria);
-                    string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lst);
-                    return Content(jsonString, "application/json");
-                }
-                else
+                var visorHistoria = new CW_DisponibilidadMedica
                 {
-                    return Json(new { error = "Error: Valores de Parametro" }, JsonRequestBehavior.AllowGet);
+                    UnidadReplicacion = tipoDocumento,
+                    CMP = documento,
+                    IdHorario = 1,
+                    IdEspecialidad_Nombre = cod_sucursal
+                };
+
+                List<VW_SS_HCE_VisorHistoria> listaVisor = m.HCE_VisorHistoria(visorHistoria);
+                if (listaVisor == null || listaVisor.Count == 0)
+                {
+                    return Json(new { error = "Error: " +  "No se encontraron historias" }, JsonRequestBehavior.AllowGet);
                 }
+
+                // Obtener IdPaciente de las historias encontradas
+                var idPaciente = listaVisor.First().IdPaciente;
+
+                var entidadOncologica = new CW_DisponibilidadMedica
+                {
+                    IdCita = idPaciente
+                };
+
+                List<SS_GE_PacienteOncologicoHC> historiasOncologicas = m.listarHistoriaOncologica(entidadOncologica);
+
+                if (historiasOncologicas != null && historiasOncologicas.Count > 0)
+                {
+                    var historiaClinica = historiasOncologicas.First().HistoriaClinica;
+                    // Asignar historia clínica a todos los elementos (si aplica)
+                    foreach (var item in listaVisor)
+                    {
+                        item.NivelInstruccion = historiaClinica;
+                    }
+                }
+                string jsonResult = Newtonsoft.Json.JsonConvert.SerializeObject(listaVisor);
+                return Content(jsonResult, "application/json");
             }
-            catch (Exception exception)
+            catch (Exception ex)
             {
-                string logMessage = string.Format("{0} | Error Asignacion: SELECT * FROM CW_VisorHistoria WHERE tipoDocumento= '{1}' AND Documento='{2}' AND Sucursal='{3}' | {4} | {5}",
-                    System.DateTime.Now, tipoDocumento, Documento, cod_sucursal, exception.StackTrace, exception.Source);
+                string logMessage = string.Format(
+                    "{0} | Error en ListarVisorHistoria: tipoDocumento='{1}', Documento='{2}', Sucursal='{3}' | {4} | {5}",
+                    DateTime.Now, tipoDocumento, documento, cod_sucursal, ex.StackTrace, ex.Source);
+
                 BaseDatos.WriteLog(logMessage);
-                return Json(new { error = "Error: " + exception.Message }, JsonRequestBehavior.AllowGet);
+
+                return Json(new { error = "Error: " + ex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
-
         public ActionResult ListarVisorHistoriaFecha(Nullable<int> Accion, string tipoDocumento, string Documento, DateTime FechaInicio, DateTime FechaFin, string cod_sucursal)
         {
             try
@@ -365,7 +389,7 @@ namespace RoyalSISWS.Controllers
                 return Json(new { error = "Error: " + exception.Message }, JsonRequestBehavior.AllowGet);
             }
         }
-      
+
         public ActionResult ListarVisorProcedimientoInforme(Nullable<int> valor, string msg)
         {
             Metodos m = new Metodos();
