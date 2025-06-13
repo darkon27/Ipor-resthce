@@ -307,6 +307,32 @@ namespace RoyalSISWS.Models
             return lstLinea;
         }
 
+        public List<SS_AD_OrdenAtencionAttach> listarDocumentosExternos(Nullable<int> Accion, string Objeto)
+        {
+            SS_AD_OrdenAtencionAttach objSC = (SS_AD_OrdenAtencionAttach)Newtonsoft.Json.JsonConvert.DeserializeObject(Objeto, typeof(SS_AD_OrdenAtencionAttach));
+
+            List<SS_AD_OrdenAtencionAttach> lstDocumentos = new List<SS_AD_OrdenAtencionAttach>();
+            using (var ctx = new SpringSalud_produccionEntities())
+            {
+                string sql = @"
+                SELECT A.CodigoOA, a.IdPaciente,C.Descripcion,B.IdOrdenAtencion, B.Secuencial, B.Id, B.Ruta, 
+                       B.IndicadorIncluirFacturacion, B.Estado, 
+                       B.UsuarioCreacion, B.FechaCreacion, 
+                       B.UsuarioModificacion, B.FechaModificacion, 
+                       B.UnidadReplicacion, B.Sucursal
+                FROM SS_AD_OrdenAtencionAttach B
+                INNER JOIN SS_AD_OrdenAtencion A WITH(NOLOCK) ON B.IdOrdenAtencion = A.IdOrdenAtencion
+                INNER JOIN GE_Varios C WITH(NOLOCK) ON B.Id = C.Secuencial  AND C.CodigoTabla = 'OADOCUMENTO' AND C.Secuencial <> 0 AND C.Estado = 2 
+                WHERE A.IdPaciente = @IdPaciente";
+
+                lstDocumentos = ctx.Database.SqlQuery<SS_AD_OrdenAtencionAttach>(sql,
+                    new SqlParameter("@IdPaciente", objSC.IdPaciente)).ToList();
+            }
+            return lstDocumentos;
+        }
+
+        
+
         #endregion
 
 

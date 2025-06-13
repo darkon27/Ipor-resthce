@@ -417,6 +417,34 @@ namespace RoyalSISWS.Controllers
             }
         }
 
+        public ActionResult listarDocumentosExternos(Nullable<int> valor, string msg)
+        {
+            Metodos m = new Metodos();
+            try
+            {
+                if (valor == 1)
+                {
+                    List<SS_AD_OrdenAtencionAttach> lst = new List<SS_AD_OrdenAtencionAttach>();
+                    lst = m.listarDocumentosExternos(valor, msg);
+                    string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(lst);
+                    jsonString = jsonString.Replace("\n", "");
+                    jsonString = Regex.Replace(jsonString, @"[^\u0000-\u007F]+", string.Empty);
+                    return Content(jsonString, "application/json");
+                }
+                else
+                {
+                    return Json("Error: Valores de Parametro ", JsonRequestBehavior.AllowGet);
+                }
+            }
+            catch (Exception exception)
+            {
+                string dd = exception.Source;
+                BaseDatos.WriteLog(System.DateTime.Now + " | " + "Error Asignacion: EXEC SP_SS_HC_ProcedimientoInformeSPRING_LISTAR  " + msg);
+                return Json("Error : " + " | " + exception.StackTrace, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
 
         #endregion
 

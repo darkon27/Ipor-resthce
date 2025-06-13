@@ -191,6 +191,7 @@
     <Compile Include="Models\Entidades\CW_VisorHistoria.cs" />
     <Compile Include="Models\Entidades\CW_VisorProcedimientoInforme.cs" />
     <Compile Include="Models\Entidades\HCE_EpisodioAtencion.cs" />
+    <Compile Include="Models\Entidades\SS_AD_OrdenAtencionAttach.cs" />
     <Compile Include="Models\Entidades\SS_GE_PacienteOncologicoHC.cs" />
     <Compile Include="Models\ListarUsuarioModel.cs" />
     <Compile Include="Models\Metodos.cs" />
