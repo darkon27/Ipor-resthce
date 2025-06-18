@@ -734,6 +734,7 @@ D:\Proyecto\IPOR\Ipor-resthce\RoyalSISWS\bin\System.Runtime.CompilerServices.Uns
 D:\Proyecto\IPOR\Ipor-resthce\RoyalSISWS\bin\System.Threading.Tasks.Extensions.xml
 D:\Proyecto\IPOR\Ipor-resthce\RoyalSISWS\bin\System.Web.Http.xml
 D:\Proyecto\IPOR\Ipor-resthce\RoyalSISWS\bin\System.Web.Http.WebHost.xml
+D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\obj\Debug\RoyalSISWS.csprojResolveAssemblyReference.cache
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\bin\RoyalSISWS.dll.config
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\bin\RoyalSISWS.dll
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\bin\RoyalSISWS.pdb
@@ -777,6 +778,5 @@ D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\bin\System.Web.Razor.xml
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\bin\System.Web.WebPages.xml
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\bin\System.Web.WebPages.Deployment.xml
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\bin\System.Web.WebPages.Razor.xml
-D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\obj\Debug\RoyalSISWS.csprojResolveAssemblyReference.cache
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\obj\Debug\RoyalSISWS.dll
 D:\Proyecto\IPOR\MIGRACION\Ipor-resthce\RoyalSISWS\obj\Debug\RoyalSISWS.pdb

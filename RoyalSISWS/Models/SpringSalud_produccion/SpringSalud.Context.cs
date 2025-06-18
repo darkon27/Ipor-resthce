@@ -28,27 +28,14 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<VW_SA_PR_REP_ListaServiciosAuxiliares> VW_SA_PR_REP_ListaServiciosAuxiliares { get; set; }
         public DbSet<VW_SS_HCE_VisorAnamnesis> VW_SS_HCE_VisorAnamnesis { get; set; }
-        public DbSet<VW_SS_HCE_VisorDiagnostico> VW_SS_HCE_VisorDiagnostico { get; set; }
-        public DbSet<VW_SS_HCE_VisorEmergencia> VW_SS_HCE_VisorEmergencia { get; set; }
         public DbSet<VW_SS_HCE_VisorExamen> VW_SS_HCE_VisorExamen { get; set; }
-        public DbSet<VW_SS_HCE_VisorProcedimientoInforme> VW_SS_HCE_VisorProcedimientoInforme { get; set; }
         public DbSet<VW_SS_HCE_VisorHistoria> VW_SS_HCE_VisorHistoria { get; set; }
         public DbSet<VW_SS_HCE_VisorReceta> VW_SS_HCE_VisorReceta { get; set; }
-        public DbSet<SS_IT_SaludAnamnesisIngreso> SS_IT_SaludAnamnesisIngreso { get; set; }
-        public DbSet<SS_IT_SALUDASIGNARMEDICOINGRESO> SS_IT_SALUDASIGNARMEDICOINGRESO { get; set; }
-        public DbSet<SS_IT_SaludATENDIDOConsultaExternaIngreso> SS_IT_SaludATENDIDOConsultaExternaIngreso { get; set; }
-        public DbSet<SS_IT_SaludConsultaExternaIngreso> SS_IT_SaludConsultaExternaIngreso { get; set; }
-        public DbSet<SS_IT_SaludDiagnosticoIngreso> SS_IT_SaludDiagnosticoIngreso { get; set; }
-        public DbSet<SS_IT_SaludInformePROCIngreso> SS_IT_SaludInformePROCIngreso { get; set; }
-        public DbSet<SS_IT_SaludInformeRutaIngreso> SS_IT_SaludInformeRutaIngreso { get; set; }
-        public DbSet<SS_IT_SaludOFTALMOLOGICOIngreso> SS_IT_SaludOFTALMOLOGICOIngreso { get; set; }
-        public DbSet<SS_IT_SaludProcedimientoIngreso> SS_IT_SaludProcedimientoIngreso { get; set; }
-        public DbSet<SS_IT_SaludRecetaIndicacionesGENIngreso> SS_IT_SaludRecetaIndicacionesGENIngreso { get; set; }
-        public DbSet<SS_IT_SaludRecetaIngreso> SS_IT_SaludRecetaIngreso { get; set; }
         public DbSet<VW_SS_HCE_VisorDescansoMedico> VW_SS_HCE_VisorDescansoMedico { get; set; }
         public DbSet<VW_SS_HCE_VisorProcedimiento> VW_SS_HCE_VisorProcedimiento { get; set; }
+        public DbSet<VW_SS_HCE_VisorDiagnostico> VW_SS_HCE_VisorDiagnostico { get; set; }
+        public DbSet<VW_SS_HCE_VisorProcedimientoInforme> VW_SS_HCE_VisorProcedimientoInforme { get; set; }
     
         public virtual ObjectResult<CW_AccesoUsuario_Result> CW_AccesoUsuario(Nullable<int> p_IDPERSONA, string p_USUARIO, string p_PASSWORD, string p_TDOCUMENTO, string p_ACCION)
         {
@@ -662,92 +649,7 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SS_HC_ATENCIONES_SOA_Result>("SS_HC_ATENCIONES_SOA", tipoListadoParameter, citaTipoParameter, citaFechaParameter, origenParameter, nombreEspecialidadParameter, tipoPacienteNombreParameter, codigoOAParameter, camaParameter, tipoOrdenAtencionNombreParameter, codigoHCParameter, pacienteNombreParameter, medicoNombreParameter, idOrdenAtencionParameter, lineaOrdenAtencionParameter, idHospitalizacionParameter, idCitaParameter, idPacienteParameter, tipoPacienteParameter, tipoAtencionParameter, idEspecialidadParameter, idMedicoParameter, tipoOrdenAtencionParameter, componenteParameter, companiaParameter, sucursalParameter, estadoPersonaParameter, estadoEpiClinicoParameter, unidadReplicacionParameter, unidadReplicacionECParameter, idEpisodioAtencionParameter, episodioClinicoParameter, idEstablecimientoSaludParameter, idUnidadServicioParameter, idPersonalSaludParameter, episodioAtencionParameter, fechaRegistroParameter, fechaAtencionParameter, estadoEpiAtencionParameter, fechaInicioParameter, fechaFinParameter, usuarioCreacionParameter, fechaCreacionParameter, usuarioModificacionParameter, fechaModificacionParameter, versionParameter, codigoHCAnteriorParameter, indicadorCirugiaParameter, indicadorExamenPrincipalParameter, indicadorSeguroParameter, modalidadParameter, sexoParameter, estadoCivilParameter, nivelInstruccionParameter, esPacienteParameter, esEmpresaParameter, inicioParameter, numeroFilasParameter, aCCIONParameter);
         }
     
-        public virtual ObjectResult<Nullable<int>> SP_SS_IT_SALUDAnamnesisIngreso(Nullable<int> iDordenatencion, Nullable<int> idPaciente, Nullable<int> idLineaOa, Nullable<int> secuencia, string tiempoEnfermedad, string relatoCronologico, string presionArterialMS1, string presionArterialMS2, string frecuenciaCardiaca, string frecuenciaRespiratoria, Nullable<decimal> temperatura, string saturacionOxigeno, string peso, string talla, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechaCreacion, string examenClinico, string usuarioModificacion, Nullable<System.DateTime> fechaModificacion)
-        {
-            var iDordenatencionParameter = iDordenatencion.HasValue ?
-                new ObjectParameter("IDordenatencion", iDordenatencion) :
-                new ObjectParameter("IDordenatencion", typeof(int));
-    
-            var idPacienteParameter = idPaciente.HasValue ?
-                new ObjectParameter("IdPaciente", idPaciente) :
-                new ObjectParameter("IdPaciente", typeof(int));
-    
-            var idLineaOaParameter = idLineaOa.HasValue ?
-                new ObjectParameter("IdLineaOa", idLineaOa) :
-                new ObjectParameter("IdLineaOa", typeof(int));
-    
-            var secuenciaParameter = secuencia.HasValue ?
-                new ObjectParameter("Secuencia", secuencia) :
-                new ObjectParameter("Secuencia", typeof(int));
-    
-            var tiempoEnfermedadParameter = tiempoEnfermedad != null ?
-                new ObjectParameter("TiempoEnfermedad", tiempoEnfermedad) :
-                new ObjectParameter("TiempoEnfermedad", typeof(string));
-    
-            var relatoCronologicoParameter = relatoCronologico != null ?
-                new ObjectParameter("RelatoCronologico", relatoCronologico) :
-                new ObjectParameter("RelatoCronologico", typeof(string));
-    
-            var presionArterialMS1Parameter = presionArterialMS1 != null ?
-                new ObjectParameter("PresionArterialMS1", presionArterialMS1) :
-                new ObjectParameter("PresionArterialMS1", typeof(string));
-    
-            var presionArterialMS2Parameter = presionArterialMS2 != null ?
-                new ObjectParameter("PresionArterialMS2", presionArterialMS2) :
-                new ObjectParameter("PresionArterialMS2", typeof(string));
-    
-            var frecuenciaCardiacaParameter = frecuenciaCardiaca != null ?
-                new ObjectParameter("FrecuenciaCardiaca", frecuenciaCardiaca) :
-                new ObjectParameter("FrecuenciaCardiaca", typeof(string));
-    
-            var frecuenciaRespiratoriaParameter = frecuenciaRespiratoria != null ?
-                new ObjectParameter("FrecuenciaRespiratoria", frecuenciaRespiratoria) :
-                new ObjectParameter("FrecuenciaRespiratoria", typeof(string));
-    
-            var temperaturaParameter = temperatura.HasValue ?
-                new ObjectParameter("Temperatura", temperatura) :
-                new ObjectParameter("Temperatura", typeof(decimal));
-    
-            var saturacionOxigenoParameter = saturacionOxigeno != null ?
-                new ObjectParameter("SaturacionOxigeno", saturacionOxigeno) :
-                new ObjectParameter("SaturacionOxigeno", typeof(string));
-    
-            var pesoParameter = peso != null ?
-                new ObjectParameter("Peso", peso) :
-                new ObjectParameter("Peso", typeof(string));
-    
-            var tallaParameter = talla != null ?
-                new ObjectParameter("Talla", talla) :
-                new ObjectParameter("Talla", typeof(string));
-    
-            var estadoParameter = estado.HasValue ?
-                new ObjectParameter("Estado", estado) :
-                new ObjectParameter("Estado", typeof(int));
-    
-            var usuarioCreacionParameter = usuarioCreacion != null ?
-                new ObjectParameter("UsuarioCreacion", usuarioCreacion) :
-                new ObjectParameter("UsuarioCreacion", typeof(string));
-    
-            var fechaCreacionParameter = fechaCreacion.HasValue ?
-                new ObjectParameter("FechaCreacion", fechaCreacion) :
-                new ObjectParameter("FechaCreacion", typeof(System.DateTime));
-    
-            var examenClinicoParameter = examenClinico != null ?
-                new ObjectParameter("ExamenClinico", examenClinico) :
-                new ObjectParameter("ExamenClinico", typeof(string));
-    
-            var usuarioModificacionParameter = usuarioModificacion != null ?
-                new ObjectParameter("UsuarioModificacion", usuarioModificacion) :
-                new ObjectParameter("UsuarioModificacion", typeof(string));
-    
-            var fechaModificacionParameter = fechaModificacion.HasValue ?
-                new ObjectParameter("FechaModificacion", fechaModificacion) :
-                new ObjectParameter("FechaModificacion", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SP_SS_IT_SALUDAnamnesisIngreso", iDordenatencionParameter, idPacienteParameter, idLineaOaParameter, secuenciaParameter, tiempoEnfermedadParameter, relatoCronologicoParameter, presionArterialMS1Parameter, presionArterialMS2Parameter, frecuenciaCardiacaParameter, frecuenciaRespiratoriaParameter, temperaturaParameter, saturacionOxigenoParameter, pesoParameter, tallaParameter, estadoParameter, usuarioCreacionParameter, fechaCreacionParameter, examenClinicoParameter, usuarioModificacionParameter, fechaModificacionParameter);
-        }
-    
-        public virtual int SP_SS_IT_SALUDAtendidoConsultaExterna(Nullable<int> iDordenatencion, Nullable<int> iDPaciente, string usuario, Nullable<System.DateTime> fechaCreacion, string unidadReplicacion, Nullable<int> lineaOrdenAtencionConsulta, Nullable<int> tipoOrdenAtencion)
+        public virtual int SP_SS_IT_SALUDAtendidoConsultaExterna(Nullable<int> iDordenatencion, Nullable<int> iDPaciente, string usuario, Nullable<System.DateTime> fechaCreacion, string unidadReplicacion, Nullable<int> lineaOrdenAtencionConsulta, Nullable<int> tipoOrdenAtencion, ObjectParameter al_retorno, ObjectParameter as_mensaje)
         {
             var iDordenatencionParameter = iDordenatencion.HasValue ?
                 new ObjectParameter("IDordenatencion", iDordenatencion) :
@@ -777,10 +679,10 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
                 new ObjectParameter("TipoOrdenAtencion", tipoOrdenAtencion) :
                 new ObjectParameter("TipoOrdenAtencion", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_SS_IT_SALUDAtendidoConsultaExterna", iDordenatencionParameter, iDPacienteParameter, usuarioParameter, fechaCreacionParameter, unidadReplicacionParameter, lineaOrdenAtencionConsultaParameter, tipoOrdenAtencionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_SS_IT_SALUDAtendidoConsultaExterna", iDordenatencionParameter, iDPacienteParameter, usuarioParameter, fechaCreacionParameter, unidadReplicacionParameter, lineaOrdenAtencionConsultaParameter, tipoOrdenAtencionParameter, al_retorno, as_mensaje);
         }
     
-        public virtual int SP_SS_IT_SALUDConsultaExterna(Nullable<int> iDordenatencion, Nullable<int> lineaOrdenAtencionConsulta, string unidadReplicacion, Nullable<int> iDPaciente, Nullable<int> secuencia, string usuario, Nullable<System.DateTime> fechacreacion, Nullable<int> tipoOrdenAtencion)
+        public virtual int SP_SS_IT_SALUDConsultaExterna(Nullable<int> iDordenatencion, Nullable<int> lineaOrdenAtencionConsulta, string unidadReplicacion, Nullable<int> iDPaciente, Nullable<int> secuencia, string usuario, Nullable<System.DateTime> fechaCreacion, Nullable<int> tipoOrdenAtencion)
         {
             var iDordenatencionParameter = iDordenatencion.HasValue ?
                 new ObjectParameter("IDordenatencion", iDordenatencion) :
@@ -806,15 +708,15 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
                 new ObjectParameter("Usuario", usuario) :
                 new ObjectParameter("Usuario", typeof(string));
     
-            var fechacreacionParameter = fechacreacion.HasValue ?
-                new ObjectParameter("Fechacreacion", fechacreacion) :
-                new ObjectParameter("Fechacreacion", typeof(System.DateTime));
+            var fechaCreacionParameter = fechaCreacion.HasValue ?
+                new ObjectParameter("FechaCreacion", fechaCreacion) :
+                new ObjectParameter("FechaCreacion", typeof(System.DateTime));
     
             var tipoOrdenAtencionParameter = tipoOrdenAtencion.HasValue ?
                 new ObjectParameter("TipoOrdenAtencion", tipoOrdenAtencion) :
                 new ObjectParameter("TipoOrdenAtencion", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_SS_IT_SALUDConsultaExterna", iDordenatencionParameter, lineaOrdenAtencionConsultaParameter, unidadReplicacionParameter, iDPacienteParameter, secuenciaParameter, usuarioParameter, fechacreacionParameter, tipoOrdenAtencionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_SS_IT_SALUDConsultaExterna", iDordenatencionParameter, lineaOrdenAtencionConsultaParameter, unidadReplicacionParameter, iDPacienteParameter, secuenciaParameter, usuarioParameter, fechaCreacionParameter, tipoOrdenAtencionParameter);
         }
     
         public virtual int SP_SS_IT_SPRINGDiagnosticosConsultaExterna(Nullable<int> iDordenatencion, Nullable<int> idDiagnostico, string unidadReplicacion, Nullable<int> iDPaciente, string usuario, Nullable<System.DateTime> fechacreacion, string determinacion, Nullable<int> lINEA, Nullable<int> tipoordenatencion, string observaciondiagnostico, string tipoIT, ObjectParameter al_retorno, ObjectParameter as_mensaje)
@@ -1103,7 +1005,7 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_IT_SaludRecetaIngreso_Result>("SP_SS_IT_SaludRecetaIngreso", unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter, lineaOrdenAtencionParameter, secuenciaParameter, componenteParameter, subFamiliaParameter, familiaParameter, lineaParameter, unidadMedidaParameter, cantidadParameter, viaParameter, dosisParameter, diastratamientoParameter, frecuenciaParameter, indicadorEPSParameter, tipoRecetaParameter, indicacionEspecificaParameter, tipoOrdenAtencionParameter, sECUENCIALHCEParameter, estadoParameter, usuarioCreacionParameter, fechacreacionParameter);
         }
     
-        public virtual ObjectResult<SP_SS_IT_SaludDiagnosticoIngreso_Result> SP_SS_IT_SaludDiagnosticoIngreso(string unidadReplicacion, Nullable<int> idEpisodioAtencion, Nullable<int> idPaciente, Nullable<int> episodioClinico, Nullable<int> idOrdenAtencion, Nullable<int> lINEA, Nullable<int> idDiagnostico, Nullable<int> secuencia, string determinacion, Nullable<int> tIPOORDENATENCION, string observacionDIAGNOSTICO, string tIPOIT, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechacreacion)
+        public virtual ObjectResult<SP_SS_IT_SaludDiagnosticoIngreso_Result> SP_SS_IT_SaludDiagnosticoIngreso(string unidadReplicacion, Nullable<int> idEpisodioAtencion, Nullable<int> idPaciente, Nullable<int> episodioClinico, Nullable<int> idOrdenAtencion, Nullable<int> lINEA, Nullable<int> idDiagnostico, Nullable<int> secuencia, string determinacion, Nullable<int> tipoOrdenAtencion, string observacionDiagnostico, string tipoIT, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechaCreacion)
         {
             var unidadReplicacionParameter = unidadReplicacion != null ?
                 new ObjectParameter("UnidadReplicacion", unidadReplicacion) :
@@ -1141,118 +1043,17 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
                 new ObjectParameter("Determinacion", determinacion) :
                 new ObjectParameter("Determinacion", typeof(string));
     
-            var tIPOORDENATENCIONParameter = tIPOORDENATENCION.HasValue ?
-                new ObjectParameter("TIPOORDENATENCION", tIPOORDENATENCION) :
-                new ObjectParameter("TIPOORDENATENCION", typeof(int));
+            var tipoOrdenAtencionParameter = tipoOrdenAtencion.HasValue ?
+                new ObjectParameter("TipoOrdenAtencion", tipoOrdenAtencion) :
+                new ObjectParameter("TipoOrdenAtencion", typeof(int));
     
-            var observacionDIAGNOSTICOParameter = observacionDIAGNOSTICO != null ?
-                new ObjectParameter("ObservacionDIAGNOSTICO", observacionDIAGNOSTICO) :
-                new ObjectParameter("ObservacionDIAGNOSTICO", typeof(string));
+            var observacionDiagnosticoParameter = observacionDiagnostico != null ?
+                new ObjectParameter("ObservacionDiagnostico", observacionDiagnostico) :
+                new ObjectParameter("ObservacionDiagnostico", typeof(string));
     
-            var tIPOITParameter = tIPOIT != null ?
-                new ObjectParameter("TIPOIT", tIPOIT) :
-                new ObjectParameter("TIPOIT", typeof(string));
-    
-            var estadoParameter = estado.HasValue ?
-                new ObjectParameter("Estado", estado) :
-                new ObjectParameter("Estado", typeof(int));
-    
-            var usuarioCreacionParameter = usuarioCreacion != null ?
-                new ObjectParameter("UsuarioCreacion", usuarioCreacion) :
-                new ObjectParameter("UsuarioCreacion", typeof(string));
-    
-            var fechacreacionParameter = fechacreacion.HasValue ?
-                new ObjectParameter("Fechacreacion", fechacreacion) :
-                new ObjectParameter("Fechacreacion", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_IT_SaludDiagnosticoIngreso_Result>("SP_SS_IT_SaludDiagnosticoIngreso", unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter, lINEAParameter, idDiagnosticoParameter, secuenciaParameter, determinacionParameter, tIPOORDENATENCIONParameter, observacionDIAGNOSTICOParameter, tIPOITParameter, estadoParameter, usuarioCreacionParameter, fechacreacionParameter);
-        }
-    
-        public virtual ObjectResult<SP_SS_IT_SALUDAnamnesisIngresoMirth_Result> SP_SS_IT_SALUDAnamnesisIngresoMirth(string unidadReplicacion, Nullable<int> idEpisodioAtencion, Nullable<int> idPaciente, Nullable<int> episodioClinico, Nullable<int> idOrdenAtencion, Nullable<int> lineaOrdenAtencion, string secuencia, string tiempoEnfermedad, string tiempoEnfermedadUnidad, string relatoCronologico, string presionArterialMSD1, Nullable<int> presionArterialMSD2, string presionArterialMSI1, string presionArterialMSI2, string frecuenciaCardiaca, Nullable<int> frecuenciaRespiratoria, string temperatura, Nullable<int> saturacionOxigeno, string peso, string talla, string examenClinico, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechacreacion)
-        {
-            var unidadReplicacionParameter = unidadReplicacion != null ?
-                new ObjectParameter("UnidadReplicacion", unidadReplicacion) :
-                new ObjectParameter("UnidadReplicacion", typeof(string));
-    
-            var idEpisodioAtencionParameter = idEpisodioAtencion.HasValue ?
-                new ObjectParameter("IdEpisodioAtencion", idEpisodioAtencion) :
-                new ObjectParameter("IdEpisodioAtencion", typeof(int));
-    
-            var idPacienteParameter = idPaciente.HasValue ?
-                new ObjectParameter("IdPaciente", idPaciente) :
-                new ObjectParameter("IdPaciente", typeof(int));
-    
-            var episodioClinicoParameter = episodioClinico.HasValue ?
-                new ObjectParameter("EpisodioClinico", episodioClinico) :
-                new ObjectParameter("EpisodioClinico", typeof(int));
-    
-            var idOrdenAtencionParameter = idOrdenAtencion.HasValue ?
-                new ObjectParameter("IdOrdenAtencion", idOrdenAtencion) :
-                new ObjectParameter("IdOrdenAtencion", typeof(int));
-    
-            var lineaOrdenAtencionParameter = lineaOrdenAtencion.HasValue ?
-                new ObjectParameter("LineaOrdenAtencion", lineaOrdenAtencion) :
-                new ObjectParameter("LineaOrdenAtencion", typeof(int));
-    
-            var secuenciaParameter = secuencia != null ?
-                new ObjectParameter("Secuencia", secuencia) :
-                new ObjectParameter("Secuencia", typeof(string));
-    
-            var tiempoEnfermedadParameter = tiempoEnfermedad != null ?
-                new ObjectParameter("TiempoEnfermedad", tiempoEnfermedad) :
-                new ObjectParameter("TiempoEnfermedad", typeof(string));
-    
-            var tiempoEnfermedadUnidadParameter = tiempoEnfermedadUnidad != null ?
-                new ObjectParameter("TiempoEnfermedadUnidad", tiempoEnfermedadUnidad) :
-                new ObjectParameter("TiempoEnfermedadUnidad", typeof(string));
-    
-            var relatoCronologicoParameter = relatoCronologico != null ?
-                new ObjectParameter("RelatoCronologico", relatoCronologico) :
-                new ObjectParameter("RelatoCronologico", typeof(string));
-    
-            var presionArterialMSD1Parameter = presionArterialMSD1 != null ?
-                new ObjectParameter("PresionArterialMSD1", presionArterialMSD1) :
-                new ObjectParameter("PresionArterialMSD1", typeof(string));
-    
-            var presionArterialMSD2Parameter = presionArterialMSD2.HasValue ?
-                new ObjectParameter("PresionArterialMSD2", presionArterialMSD2) :
-                new ObjectParameter("PresionArterialMSD2", typeof(int));
-    
-            var presionArterialMSI1Parameter = presionArterialMSI1 != null ?
-                new ObjectParameter("PresionArterialMSI1", presionArterialMSI1) :
-                new ObjectParameter("PresionArterialMSI1", typeof(string));
-    
-            var presionArterialMSI2Parameter = presionArterialMSI2 != null ?
-                new ObjectParameter("PresionArterialMSI2", presionArterialMSI2) :
-                new ObjectParameter("PresionArterialMSI2", typeof(string));
-    
-            var frecuenciaCardiacaParameter = frecuenciaCardiaca != null ?
-                new ObjectParameter("FrecuenciaCardiaca", frecuenciaCardiaca) :
-                new ObjectParameter("FrecuenciaCardiaca", typeof(string));
-    
-            var frecuenciaRespiratoriaParameter = frecuenciaRespiratoria.HasValue ?
-                new ObjectParameter("FrecuenciaRespiratoria", frecuenciaRespiratoria) :
-                new ObjectParameter("FrecuenciaRespiratoria", typeof(int));
-    
-            var temperaturaParameter = temperatura != null ?
-                new ObjectParameter("Temperatura", temperatura) :
-                new ObjectParameter("Temperatura", typeof(string));
-    
-            var saturacionOxigenoParameter = saturacionOxigeno.HasValue ?
-                new ObjectParameter("SaturacionOxigeno", saturacionOxigeno) :
-                new ObjectParameter("SaturacionOxigeno", typeof(int));
-    
-            var pesoParameter = peso != null ?
-                new ObjectParameter("Peso", peso) :
-                new ObjectParameter("Peso", typeof(string));
-    
-            var tallaParameter = talla != null ?
-                new ObjectParameter("Talla", talla) :
-                new ObjectParameter("Talla", typeof(string));
-    
-            var examenClinicoParameter = examenClinico != null ?
-                new ObjectParameter("ExamenClinico", examenClinico) :
-                new ObjectParameter("ExamenClinico", typeof(string));
+            var tipoITParameter = tipoIT != null ?
+                new ObjectParameter("TipoIT", tipoIT) :
+                new ObjectParameter("TipoIT", typeof(string));
     
             var estadoParameter = estado.HasValue ?
                 new ObjectParameter("Estado", estado) :
@@ -1262,11 +1063,11 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
                 new ObjectParameter("UsuarioCreacion", usuarioCreacion) :
                 new ObjectParameter("UsuarioCreacion", typeof(string));
     
-            var fechacreacionParameter = fechacreacion.HasValue ?
-                new ObjectParameter("Fechacreacion", fechacreacion) :
-                new ObjectParameter("Fechacreacion", typeof(System.DateTime));
+            var fechaCreacionParameter = fechaCreacion.HasValue ?
+                new ObjectParameter("FechaCreacion", fechaCreacion) :
+                new ObjectParameter("FechaCreacion", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_IT_SALUDAnamnesisIngresoMirth_Result>("SP_SS_IT_SALUDAnamnesisIngresoMirth", unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter, lineaOrdenAtencionParameter, secuenciaParameter, tiempoEnfermedadParameter, tiempoEnfermedadUnidadParameter, relatoCronologicoParameter, presionArterialMSD1Parameter, presionArterialMSD2Parameter, presionArterialMSI1Parameter, presionArterialMSI2Parameter, frecuenciaCardiacaParameter, frecuenciaRespiratoriaParameter, temperaturaParameter, saturacionOxigenoParameter, pesoParameter, tallaParameter, examenClinicoParameter, estadoParameter, usuarioCreacionParameter, fechacreacionParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_IT_SaludDiagnosticoIngreso_Result>("SP_SS_IT_SaludDiagnosticoIngreso", unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter, lINEAParameter, idDiagnosticoParameter, secuenciaParameter, determinacionParameter, tipoOrdenAtencionParameter, observacionDiagnosticoParameter, tipoITParameter, estadoParameter, usuarioCreacionParameter, fechaCreacionParameter);
         }
     
         public virtual ObjectResult<SP_SS_IT_SaludInformePROCIngreso_Result> SP_SS_IT_SaludInformePROCIngreso(string unidadReplicacion, Nullable<int> idEpisodioAtencion, Nullable<int> idPaciente, Nullable<int> episodioClinico, Nullable<int> idOrdenAtencion, Nullable<int> lineaOrdenAtencion, string informe, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechacreacion)
@@ -1980,6 +1781,107 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
                 new ObjectParameter("Accion", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result>("SP_SS_HC_ProcedimientoInformeSPRING_LISTAR", idPacienteParameter, pacienteParameter, codigoOAParameter, codigoComponenteParameter, descripcionComponenteParameter, inicioParameter, numeroFilasParameter, accionParameter);
+        }
+    
+        public virtual ObjectResult<SP_SS_IT_SALUDAnamnesisIngresoMirth_Result> SP_SS_IT_SALUDAnamnesisIngresoMirth(string unidadReplicacion, Nullable<int> idEpisodioAtencion, Nullable<int> idPaciente, Nullable<int> episodioClinico, Nullable<int> idOrdenAtencion, Nullable<int> lineaOrdenAtencion, string secuencia, string tiempoEnfermedad, string tiempoEnfermedadUnidad, string relatoCronologico, string presionArterialMSD1, Nullable<int> presionArterialMSD2, string presionArterialMSI1, string presionArterialMSI2, string frecuenciaCardiaca, Nullable<int> frecuenciaRespiratoria, Nullable<decimal> temperatura, Nullable<int> saturacionOxigeno, string peso, string talla, string examenClinico, Nullable<int> estado, string usuarioCreacion, Nullable<System.DateTime> fechaCreacion)
+        {
+            var unidadReplicacionParameter = unidadReplicacion != null ?
+                new ObjectParameter("UnidadReplicacion", unidadReplicacion) :
+                new ObjectParameter("UnidadReplicacion", typeof(string));
+    
+            var idEpisodioAtencionParameter = idEpisodioAtencion.HasValue ?
+                new ObjectParameter("IdEpisodioAtencion", idEpisodioAtencion) :
+                new ObjectParameter("IdEpisodioAtencion", typeof(int));
+    
+            var idPacienteParameter = idPaciente.HasValue ?
+                new ObjectParameter("IdPaciente", idPaciente) :
+                new ObjectParameter("IdPaciente", typeof(int));
+    
+            var episodioClinicoParameter = episodioClinico.HasValue ?
+                new ObjectParameter("EpisodioClinico", episodioClinico) :
+                new ObjectParameter("EpisodioClinico", typeof(int));
+    
+            var idOrdenAtencionParameter = idOrdenAtencion.HasValue ?
+                new ObjectParameter("IdOrdenAtencion", idOrdenAtencion) :
+                new ObjectParameter("IdOrdenAtencion", typeof(int));
+    
+            var lineaOrdenAtencionParameter = lineaOrdenAtencion.HasValue ?
+                new ObjectParameter("LineaOrdenAtencion", lineaOrdenAtencion) :
+                new ObjectParameter("LineaOrdenAtencion", typeof(int));
+    
+            var secuenciaParameter = secuencia != null ?
+                new ObjectParameter("Secuencia", secuencia) :
+                new ObjectParameter("Secuencia", typeof(string));
+    
+            var tiempoEnfermedadParameter = tiempoEnfermedad != null ?
+                new ObjectParameter("TiempoEnfermedad", tiempoEnfermedad) :
+                new ObjectParameter("TiempoEnfermedad", typeof(string));
+    
+            var tiempoEnfermedadUnidadParameter = tiempoEnfermedadUnidad != null ?
+                new ObjectParameter("TiempoEnfermedadUnidad", tiempoEnfermedadUnidad) :
+                new ObjectParameter("TiempoEnfermedadUnidad", typeof(string));
+    
+            var relatoCronologicoParameter = relatoCronologico != null ?
+                new ObjectParameter("RelatoCronologico", relatoCronologico) :
+                new ObjectParameter("RelatoCronologico", typeof(string));
+    
+            var presionArterialMSD1Parameter = presionArterialMSD1 != null ?
+                new ObjectParameter("PresionArterialMSD1", presionArterialMSD1) :
+                new ObjectParameter("PresionArterialMSD1", typeof(string));
+    
+            var presionArterialMSD2Parameter = presionArterialMSD2.HasValue ?
+                new ObjectParameter("PresionArterialMSD2", presionArterialMSD2) :
+                new ObjectParameter("PresionArterialMSD2", typeof(int));
+    
+            var presionArterialMSI1Parameter = presionArterialMSI1 != null ?
+                new ObjectParameter("PresionArterialMSI1", presionArterialMSI1) :
+                new ObjectParameter("PresionArterialMSI1", typeof(string));
+    
+            var presionArterialMSI2Parameter = presionArterialMSI2 != null ?
+                new ObjectParameter("PresionArterialMSI2", presionArterialMSI2) :
+                new ObjectParameter("PresionArterialMSI2", typeof(string));
+    
+            var frecuenciaCardiacaParameter = frecuenciaCardiaca != null ?
+                new ObjectParameter("FrecuenciaCardiaca", frecuenciaCardiaca) :
+                new ObjectParameter("FrecuenciaCardiaca", typeof(string));
+    
+            var frecuenciaRespiratoriaParameter = frecuenciaRespiratoria.HasValue ?
+                new ObjectParameter("FrecuenciaRespiratoria", frecuenciaRespiratoria) :
+                new ObjectParameter("FrecuenciaRespiratoria", typeof(int));
+    
+            var temperaturaParameter = temperatura.HasValue ?
+                new ObjectParameter("Temperatura", temperatura) :
+                new ObjectParameter("Temperatura", typeof(decimal));
+    
+            var saturacionOxigenoParameter = saturacionOxigeno.HasValue ?
+                new ObjectParameter("SaturacionOxigeno", saturacionOxigeno) :
+                new ObjectParameter("SaturacionOxigeno", typeof(int));
+    
+            var pesoParameter = peso != null ?
+                new ObjectParameter("Peso", peso) :
+                new ObjectParameter("Peso", typeof(string));
+    
+            var tallaParameter = talla != null ?
+                new ObjectParameter("Talla", talla) :
+                new ObjectParameter("Talla", typeof(string));
+    
+            var examenClinicoParameter = examenClinico != null ?
+                new ObjectParameter("ExamenClinico", examenClinico) :
+                new ObjectParameter("ExamenClinico", typeof(string));
+    
+            var estadoParameter = estado.HasValue ?
+                new ObjectParameter("Estado", estado) :
+                new ObjectParameter("Estado", typeof(int));
+    
+            var usuarioCreacionParameter = usuarioCreacion != null ?
+                new ObjectParameter("UsuarioCreacion", usuarioCreacion) :
+                new ObjectParameter("UsuarioCreacion", typeof(string));
+    
+            var fechaCreacionParameter = fechaCreacion.HasValue ?
+                new ObjectParameter("FechaCreacion", fechaCreacion) :
+                new ObjectParameter("FechaCreacion", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_SS_IT_SALUDAnamnesisIngresoMirth_Result>("SP_SS_IT_SALUDAnamnesisIngresoMirth", unidadReplicacionParameter, idEpisodioAtencionParameter, idPacienteParameter, episodioClinicoParameter, idOrdenAtencionParameter, lineaOrdenAtencionParameter, secuenciaParameter, tiempoEnfermedadParameter, tiempoEnfermedadUnidadParameter, relatoCronologicoParameter, presionArterialMSD1Parameter, presionArterialMSD2Parameter, presionArterialMSI1Parameter, presionArterialMSI2Parameter, frecuenciaCardiacaParameter, frecuenciaRespiratoriaParameter, temperaturaParameter, saturacionOxigenoParameter, pesoParameter, tallaParameter, examenClinicoParameter, estadoParameter, usuarioCreacionParameter, fechaCreacionParameter);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using RoyalSISWS.Models;
+using RoyalSISWS.Models.Entidades;
 using RoyalSISWS.Models.SpringSalud_produccion;
 using RoyalSISWS.Models.WEB_ERPSALUD;
 using System;

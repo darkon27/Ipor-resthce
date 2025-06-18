@@ -33,5 +33,7 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public string documento { get; set; }
         public string tipodocumento { get; set; }
+        public string DesEstadio { get; set; }
+        public Nullable<int> Estadio { get; set; }
     }
 }

@@ -193,6 +193,14 @@
     <Compile Include="Models\Entidades\HCE_EpisodioAtencion.cs" />
     <Compile Include="Models\Entidades\SS_AD_OrdenAtencionAttach.cs" />
     <Compile Include="Models\Entidades\SS_GE_PacienteOncologicoHC.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludAnamnesisIngreso.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludDiagnosticoIngreso.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludInformePROCIngreso.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludInformeRutaIngreso.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludOFTALMOLOGICOIngreso.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludProcedimientoIngreso.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludRecetaIndicacionesGENIngreso.cs" />
+    <Compile Include="Models\Entidades\SS_IT_SaludRecetaIngreso.cs" />
     <Compile Include="Models\ListarUsuarioModel.cs" />
     <Compile Include="Models\Metodos.cs" />
     <Compile Include="Models\ResponseData.cs" />
@@ -253,6 +261,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SpringSalud.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SpringSalud_produccion\SpringSalud1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpringSalud.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SpringSalud_produccion\SP_SS_EliminarLlamado_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
@@ -295,42 +308,6 @@
     <Compile Include="Models\SpringSalud_produccion\SS_HC_ATENCIONES_SOA_Result.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludAnamnesisIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SALUDASIGNARMEDICOINGRESO.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludATENDIDOConsultaExternaIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludConsultaExternaIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludDiagnosticoIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludInformePROCIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludInformeRutaIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludOFTALMOLOGICOIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludProcedimientoIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludRecetaIndicacionesGENIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\SS_IT_SaludRecetaIngreso.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\VW_SA_PR_REP_ListaServiciosAuxiliares.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorAnamnesis.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
@@ -338,9 +315,6 @@
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorDiagnostico.cs">
-      <DependentUpon>SpringSalud.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorEmergencia.cs">
       <DependentUpon>SpringSalud.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SpringSalud_produccion\VW_SS_HCE_VisorExamen.cs">
@@ -436,7 +410,7 @@
     <Content Include="Models\SpringSalud_produccion\SpringSalud.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SpringSalud.edmx</DependentUpon>
-      <LastGenOutput>SpringSalud.cs</LastGenOutput>
+      <LastGenOutput>SpringSalud1.cs</LastGenOutput>
     </Content>
     <Content Include="Models\WEB_ERPSALUD\BDWEB_ERPSALUD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -33,8 +33,8 @@ namespace RoyalSISWS.Models.SpringSalud_produccion
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public string Codigo { get; set; }
         public string TipoDato { get; set; }
-        public Nullable<int> IndAutosize { get; set; }
-        public Nullable<int> IndAjustarCampo { get; set; }
+        public int IndAutosize { get; set; }
+        public int IndAjustarCampo { get; set; }
         public Nullable<int> IdPaciente { get; set; }
         public string documento { get; set; }
         public string TipoInforme { get; set; }

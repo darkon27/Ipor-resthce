@@ -258,22 +258,22 @@ namespace RoyalSISWS.Models
             return lst;
         }
 
-        public List<VW_SS_HCE_VisorEmergencia> HCE_VisoreEmergencia(CW_DisponibilidadMedica Disponibilidad)
-        {
-            List<VW_SS_HCE_VisorEmergencia> lst = new List<VW_SS_HCE_VisorEmergencia>();
-            using (SpringSalud_produccionEntities context = new SpringSalud_produccionEntities())
-            {
-                context.Database.Connection.Open();
-                if (Disponibilidad.IdTurno == 1)
-                {
-                    lst = context.VW_SS_HCE_VisorEmergencia.Where(
-                        t => t.Origen == Disponibilidad.UnidadReplicacion && t.CodigoOA == Disponibilidad.CMP).AsNoTracking().ToList();
-                }
-                context.Database.Connection.Close();
-                context.Dispose();
-            }
-            return lst;
-        }
+        //public List<VW_SS_HCE_VisorEmergencia> HCE_VisoreEmergencia(CW_DisponibilidadMedica Disponibilidad)
+        //{
+        //    List<VW_SS_HCE_VisorEmergencia> lst = new List<VW_SS_HCE_VisorEmergencia>();
+        //    using (SpringSalud_produccionEntities context = new SpringSalud_produccionEntities())
+        //    {
+        //        context.Database.Connection.Open();
+        //        if (Disponibilidad.IdTurno == 1)
+        //        {
+        //            lst = context.VW_SS_HCE_VisorEmergencia.Where(
+        //                t => t.Origen == Disponibilidad.UnidadReplicacion && t.CodigoOA == Disponibilidad.CMP).AsNoTracking().ToList();
+        //        }
+        //        context.Database.Connection.Close();
+        //        context.Dispose();
+        //    }
+        //    return lst;
+        //}
 
         public List<SP_SS_HC_ProcedimientoInformeSPRING_LISTAR_Result> HCE_VisorProcedimientoInformeSPRING(Nullable<int> Accion, string Objeto)
         {
@@ -935,7 +935,7 @@ namespace RoyalSISWS.Models
                         var VAAA = context.SP_SS_IT_SALUDAnamnesisIngresoMirth(ObjTrace.UnidadReplicacion, ObjTrace.IdEpisodioAtencion, ObjTrace.IdPaciente,
                           ObjTrace.EpisodioClinico, ObjTrace.IdOrdenAtencion, ObjTrace.LineaOrdenAtencion, "1", ObjTrace.TiempoEnfermedad, ObjTrace.TiempoEnfermedadUnidad,
                           ObjTrace.RelatoCronologico, ObjTrace.PresionArterialMSD1, ObjTrace.PresionArterialMSD2, ObjTrace.PresionArterialMSI1
-                          , ObjTrace.PresionArterialMSI2, ObjTrace.FrecuenciaCardiaca, ObjTrace.FrecuenciaRespiratoria, ObjTrace.Temperatura, ObjTrace.SaturacionOxigeno
+                          , ObjTrace.PresionArterialMSI2, ObjTrace.FrecuenciaCardiaca, ObjTrace.FrecuenciaRespiratoria,Convert.ToDecimal(ObjTrace.Temperatura), ObjTrace.SaturacionOxigeno
                           , ObjTrace.Peso, ObjTrace.Talla, ObjTrace.EXAMENCLINICOOBS, ObjTrace.Estado, ObjTrace.UsuarioCreacion, DateTime.Now);
                         foreach (SP_SS_IT_SALUDAnamnesisIngresoMirth_Result obj in VAAA)
                         {

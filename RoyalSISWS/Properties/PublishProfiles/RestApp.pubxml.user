@@ -85,13 +85,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2025 19:58:44</publishTime>
     </File>
     <File Include="bin/RoyalSISWS.dll">
-      <publishTime>05/21/2025 19:59:32</publishTime>
+      <publishTime>06/16/2025 11:27:43</publishTime>
     </File>
     <File Include="bin/RoyalSystems.Core.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/14/2024 10:19:00</publishTime>
     </File>
     <File Include="bin/RoyalSystems.Data.dll">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>10/14/2024 10:19:00</publishTime>
     </File>
     <File Include="bin/System.Buffers.dll">
       <publishTime>05/21/2025 19:58:44</publishTime>
@@ -160,7 +160,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/07/2020 21:31:28</publishTime>
     </File>
     <File Include="Models/SpringSalud_produccion/SpringSalud.edmx.diagram">
-      <publishTime>01/01/0001 00:00:00</publishTime>
+      <publishTime>06/14/2025 10:00:36</publishTime>
     </File>
     <File Include="Models/WEB_ERPSALUD/BDWEB_ERPSALUD.edmx.diagram">
       <publishTime>11/19/2024 14:58:16</publishTime>
@@ -178,7 +178,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/11/2019 15:18:36</publishTime>
     </File>
     <File Include="SpringWeb.config">
-      <publishTime>04/17/2025 10:35:09</publishTime>
+      <publishTime>06/06/2025 15:58:40</publishTime>
     </File>
     <File Include="Views/Consulta/Index.cshtml">
       <publishTime>01/01/0001 00:00:00</publishTime>
@@ -187,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/01/0001 00:00:00</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/21/2025 19:59:32</publishTime>
+      <publishTime>06/16/2025 11:27:44</publishTime>
     </File>
   </ItemGroup>
 </Project>
